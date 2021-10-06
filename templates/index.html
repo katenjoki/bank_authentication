@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Bank Note Authentication with Random Forest Classifier
+        </title>
+    </head>
+    <body>
+        <style>
+            body{width: 100%;height:100%;font-family: 'Helvetica';	background: #fff ;color: #000;
+            font-size: 24px;text-align:center;letter-spacing:1.4px;}
+            </style>
+        <div class="login">
+            <h1>Bank Note Prediction</h1>
+        
+             <!-- Main Input For Receiving Query to our ML -->
+            <form action="{{ url_for('predict')}}"method="post">
+                <input type="text" name="variance" placeholder="variance" required="required" />
+                <input type="text" name="skewness" placeholder="skewness" required="required" />
+                <input type="text" name="curtosis" placeholder="curtosis" required="required" />
+                <input type="text" name="entropy" placeholder="entropy" required="required" />
+                <button type="submit" class="btn btn-primary btn-block btn-large">Predict whether the bank note is authentic</button>
+            </form>
+        
+           <br>
+           <br>
+           {{ prediction_text }}
+        
+         </div>
+    </body>
+</html>
